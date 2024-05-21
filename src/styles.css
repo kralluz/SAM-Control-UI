@@ -1,0 +1,18 @@
+.selected-doctor {
+    font-weight: bold;
+    color: blue; /* Altere a cor conforme necessário */
+  }
+  
+  .profile-info {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Para mostrar que a imagem é clicável */
+  }
+  
+  .profile-info img {
+    width: 50px; /* Ajuste conforme necessário */
+    height: 50px; /* Ajuste conforme necessário */
+    border-radius: 50%; /* Para tornar a imagem redonda */
+    margin-right: 10px; /* Espaçamento entre a imagem e o nome */
+  }
+  

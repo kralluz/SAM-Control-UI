@@ -1,0 +1,176 @@
+/* dark-theme.css */
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+header.dark-theme {
+  background-color: #1e1e1e;
+  padding: 10px 20px;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+header.dark-theme h1 {
+  color: #ffffff;
+}
+
+.dropdown.dark-theme summary {
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.dropdown-content.dark-theme {
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  position: absolute;
+  z-index: 1000;
+  width: max-content;
+}
+
+.dropdown-content.dark-theme a {
+  color: #ffffff;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content.dark-theme a:hover {
+  background-color: #3a3a3a;
+}
+
+.profile-info.dark-theme {
+  display: flex;
+  align-items: center;
+}
+
+.profile-info.dark-theme p {
+  margin-left: 10px;
+  color: #ffffff;
+}
+
+.agendamentos.dark-theme {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.agendamentos.dark-theme h2 {
+  color: #ffffff;
+}
+
+.appointments-container.dark-theme {
+  background-color: #2a2a2a;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.appointment-slot.dark-theme {
+  padding: 10px;
+  border: 1px solid #3a3a3a;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.occupied.dark-theme {
+  background-color: #3a3a3a;
+  color: #ffffff;
+}
+
+.available.dark-theme {
+  background-color: #2a2a2a;
+  color: #ffffff;
+}
+
+.appointment-slot.dark-theme p {
+  margin: 0;
+  color: #ffffff;
+}
+
+.appointment-slot.dark-theme button {
+  margin-top: 5px;
+}
+
+
+:root {
+  --background-color: #1e1e1e;
+  --text-color: #ffffff;
+  --border-color: #3a3a3a;
+  --hover-background-color: #3a3a3a;
+  --active-background-color: #ff0000 !important;
+  --weekday-background-color: #2a2a2a;
+}
+
+.react-calendar {
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  color: var(--text-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-calendar__navigation {
+  background-color: var(--weekday-background-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 0;
+}
+
+.react-calendar__navigation button {
+  color: var(--text-color);
+  background: none;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.react-calendar__navigation button:hover {
+  background-color: var(--hover-background-color);
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.react-calendar__month-view__weekdays {
+  background-color: var(--weekday-background-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  color: var(--text-color);
+}
+
+.react-calendar__tile {
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  transition: transform 0.2s ease;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: var(--hover-background-color);
+  transform: scale(1.05);
+  color: var(--text-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.react-calendar__tile--active {
+  background-color: var(--active-background-color);
+  color: var(--text-color);
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+}
+
+.react-calendar__tile--now {
+  background-color: var(--hover-background-color);
+  color: var(--text-color);
+}
+
+.react-calendar__tile--hasActive {
+  background-color: red;
+  color: var(--text-color);
+}
+
+.react-calendar__navigation button:hover {
+  background-color: #555 !important; /* Cor mais escura para hover */
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
