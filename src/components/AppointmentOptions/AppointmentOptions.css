@@ -1,0 +1,112 @@
+.appointment-options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.appointment-options button {
+  position: relative; /* Para posicionar o pseudo-elemento */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 4vw; /* Tamanho do ícone responsivo */
+  padding: 1vw; /* Espaçamento interno responsivo */
+  transition: transform 0.3s, color 0.3s; /* Transição suave de 0.3 segundos */
+}
+
+.appointment-options button::after {
+  content: attr(data-title); /* Usar o valor do atributo data-title como conteúdo */
+  position: absolute; /* Posicionar o texto em relação ao botão */
+  bottom: 55px; /* Posicionar o texto abaixo do botão */
+  left: 50%; /* Centralizar horizontalmente */
+  transform: translateX(-50%); /* Centralizar horizontalmente */
+  background-color: rgba(0, 0, 0, 0.7); /* Cor de fundo semi-transparente */
+  color: #fff; /* Cor do texto */
+  font-size: 12px; /* Tamanho da fonte */
+  padding: 5px 10px; /* Espaçamento interno */
+  border-radius: 3px; /* Cantos arredondados */
+  white-space: nowrap; /* Evitar que o texto quebre em várias linhas */
+  opacity: 0; /* Inicialmente oculto */
+  transition: opacity 0.3s; /* Transição suave de opacidade */
+}
+
+.appointment-options button:hover::after {
+  opacity: 1; /* Mostrar o texto ao passar o mouse */
+}
+
+
+@media screen and (min-width: 600px) {
+  .appointment-options button {
+    font-size: 20px; /* Tamanho do ícone para telas maiores */
+    padding: 10px; /* Espaçamento interno para telas maiores */
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .appointment-options{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .appointment-options button {
+    font-size: 22px; /* Tamanho mínimo do ícone para telas muito pequenas */
+    padding: 3px; /* Espaçamento interno mínimo para telas muito pequenas */
+  }
+}
+
+.appointment-options button:hover,
+.appointment-options button:focus {
+  color: rgb(41, 41, 41); /* Altere a cor conforme necessário */
+  transform: scale(1.2); /* Aumenta o tamanho do botão no hover */
+}
+
+
+/* Estilos para os modais */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 80vw;
+  max-height: 80vh;
+  overflow: auto;
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal button {
+  background-color: #f1f1f1;
+  border: none;
+  color: #333;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Estilos para o overlay do modal */
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}

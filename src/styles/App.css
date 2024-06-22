@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'UberMoveBold';
-  src: url('../assets/UberMoveBold.otf') format('opentype');
+  src: url('../../assets/UberMoveBold.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'UberMoveMedium';
-  src: url('../assets/UberMoveMedium.otf') format('opentype');
+  src: url('../../assets/UberMoveMedium.otf') format('opentype');
 }
 
 body {
@@ -13,7 +13,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'UberMoveBold', sans-serif;
+  font-family: 'roboto', sans-serif;
 }
 
 
@@ -106,4 +106,70 @@ h1, h2, h3, h4, h5, h6 {
 .toggle-checkbox:checked + .toggle-label .toggle-ball::first-line,
 .toggle-checkbox:checked + .toggle-label .toggle-ball::first-letter {
   opacity: 1; /* Exibe as crateras no modo lua */
+}
+
+
+body {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+      font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+      font-size: 18px;
+  }
+}
+
+h1 {
+  font-size: 2.5vw; /* 2.5% da largura da viewport */
+}
+
+p {
+  font-size: 1.5vw; /* 1.5% da largura da viewport */
+}
+
+
+.texto-adaptavel {
+  font-size: 2vw; /* Tamanho da fonte em relação à largura da viewport */
+  max-width: 100%; /* Evita que o texto vaze da div */
+  text-align: center; /* Centraliza o texto horizontalmente */
+}
+
+@media screen and (max-width: 1440px) {
+  .texto-adaptavel {
+      font-size: 30px; /* Tamanho da fonte para telas maiores */
+  }
+  
+}
+
+
+.Modal {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: #e0e0e0;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+
+.Overlay {
+  background: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

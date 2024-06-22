@@ -23,7 +23,7 @@ header.light-theme h1 {
     background-color: #fff;
     border: 1px solid #ccc;
     position: absolute;
-    z-index: 1000;
+    z-index:100;
     width: max-content;
 }
 
