@@ -1,4 +1,3 @@
-/* dark-theme.css */
 body.dark-theme {
   background-color: #121212;
   color: #ffffff;
@@ -90,7 +89,6 @@ header.dark-theme h1 {
   margin-top: 5px;
 }
 
-
 :root {
   --background-color: #1e1e1e;
   --text-color: #ffffff;
@@ -169,7 +167,7 @@ header.dark-theme h1 {
 }
 
 .react-calendar__navigation button:hover {
-  background-color: #555 !important; /* Cor mais escura para hover */
+  background-color: #555 !important;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 8px;

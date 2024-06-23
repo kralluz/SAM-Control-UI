@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "react-calendar/dist/Calendar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import appts from "./database";
 import "./styles/App.css";
 import "./styles/light-theme.css";
 import "./styles/dark-theme.css";
+import "./styles/modal.css";
+
 import PersonCalendar from "./calendar";
 import LoadingSpinner from "./LoadingSpinner";
 import AppointmentList from "./components/AppointmentList/AppointmentList";

@@ -1,5 +1,10 @@
 import Modal from "react-modal";
-const PhoneModal = ({ isOpen, onRequestClose, onCall }) => {
+const PhoneModal = ({ isOpen, onRequestClose, telephone }) => {
+  const onCall = () => {
+    window.location.href = `tel:${telephone}`;
+    onRequestClose();
+  };
+
   return (
     <Modal
       isOpen={isOpen}
@@ -8,7 +13,7 @@ const PhoneModal = ({ isOpen, onRequestClose, onCall }) => {
       overlayClassName="Overlay"
     >
       <h2>Ligação</h2>
-      <p>Deseja ligar para este contato?</p>
+      <p>Deseja ligar para {telephone}?</p>
       <button onClick={onCall} className="confirm-button">
         Sim
       </button>

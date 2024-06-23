@@ -1,3 +1,5 @@
+import './header.css';
+
 const Header = ({ toggleDarkMode, darkMode }) => (
     <header className={`d-flex justify-content-between align-items-center ${darkMode ? "dark-theme" : "light-theme"}`}>
         <h1>IMEC Diagnóstico Agenda</h1>

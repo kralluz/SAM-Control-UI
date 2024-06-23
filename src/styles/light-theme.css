@@ -1,103 +1,101 @@
-/* light-theme.css */
 body.light-theme {
-    background-color: #f5f5f5;
-    color: #333;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 header.light-theme {
-    background-color: #eee;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
+  background-color: #eee;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
 }
 
 header.light-theme h1 {
-    color: #333;
+  color: #333;
 }
 
 .dropdown.light-theme summary {
-    color: #333;
-    cursor: pointer;
+  color: #333;
+  cursor: pointer;
 }
 
 .dropdown-content.light-theme {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    position: absolute;
-    z-index:100;
-    width: max-content;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  position: absolute;
+  z-index: 100;
+  width: max-content;
 }
 
 .dropdown-content.light-theme a {
-    color: #333;
-    padding: 10px;
-    display: block;
-    text-decoration: none;
+  color: #333;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
 }
 
 .dropdown-content.light-theme a:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
 .profile-info.light-theme {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .profile-info.light-theme p {
-    margin-left: 10px;
-    color: #333;
+  margin-left: 10px;
+  color: #333;
 }
 
 .agendamentos.light-theme {
-    background-color: #eee;
-    padding: 20px;
-    border-radius: 10px;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .agendamentos.light-theme h2 {
-    color: #333;
+  color: #333;
 }
 
 .appointments-container.light-theme {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 10px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .appointment-slot.light-theme {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
 .occupied.light-theme {
-    background-color: #ddd;
-    color: #333;
+  background-color: #ddd;
+  color: #333;
 }
 
 .available.light-theme {
-    background-color: #f9f9f9;
-    color: #333;
+  background-color: #f9f9f9;
+  color: #333;
 }
 
 .appointment-slot.light-theme p {
-    margin: 0;
-    color: #333;
+  margin: 0;
+  color: #333;
 }
 
 .appointment-slot.light-theme button {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
-
 :root {
-  --background-color: #ffffff; /* Cor de fundo mais clara */
-  --text-color: #333; /* Cor do texto mantida para bom contraste */
-  --border-color: #ddd; /* Cor das bordas mais suave */
-  --hover-background-color: #f5f5f5; /* Cor de fundo ao passar o mouse */
-  --active-background-color: #e6e6e6; /* Cor de fundo quando ativo */
-  --weekday-background-color: #f0f0f0; /* Cor de fundo para os dias da semana no calendário */
+  --background-color: #ffffff;
+  --text-color: #333;
+  --border-color: #ddd;
+  --hover-background-color: #f5f5f5;
+  --active-background-color: #e6e6e6;
+  --weekday-background-color: #f0f0f0;
 }
 
 .react-calendar {
@@ -105,7 +103,7 @@ header.light-theme h1 {
   border: 1px solid var(--border-color);
   border-radius: 10px;
   color: var(--text-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leve aumento na sombra para melhor definição */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .react-calendar__navigation {

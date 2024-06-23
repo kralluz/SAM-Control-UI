@@ -7,6 +7,7 @@ const appts = [
     plano_saude: "UNIMED",
     tipo_exame: "us",
     nome_exame: "Abdomen",
+    telephone: "+5562985401969"
   },
   {
     horario: "2024-05-10T23:16:00.000Z",
@@ -16,6 +17,7 @@ const appts = [
     plano_saude: null,
     tipo_exame: "us",
     nome_exame: "Tireóide",
+    telephone: "+5562985401969"
   },
   {
     horario: "2024-05-10T23:46:00.000Z",
@@ -25,6 +27,7 @@ const appts = [
     plano_saude: "CASSI",
     tipo_exame: "TC",
     nome_exame: "Coronária",
+    telephone: "+5562985401969"
   },
   {
     horario: "2024-05-11T00:16:00.000Z",
@@ -34,6 +37,7 @@ const appts = [
     plano_saude: "Bradesco",
     tipo_exame: "TC",
     nome_exame: "Coronária",
+    telephone: "+5562985401969"
   },
   {
     horario: "2024-05-11T00:46:00.000Z",
@@ -43,6 +47,7 @@ const appts = [
     plano_saude: "CAIXA",
     tipo_exame: "ECO",
     nome_exame: "Trastorácio",
+    telephone: "+5562985401969"
   },
   {
     horario: "2024-05-11T01:16:00.000Z",
@@ -50,8 +55,9 @@ const appts = [
     doctor_id: "2",
     patient_name: "Marcos Almeida",
     plano_saude: "Bradesco",
-    tipo_exame: "tc",
+    tipo_exame: "TC",
     nome_exame: "Coronária",
+    telephone: "+5562985401969"
   },
   {
     horario: "2024-05-11T01:46:00.000Z",
@@ -61,6 +67,7 @@ const appts = [
     plano_saude: "CAIXA",
     tipo_exame: "ECO",
     nome_exame: "Com estresse",
+    telephone: "+5562985401969"
   },
   {
     horario: "2024-05-11T02:16:00.000Z",
@@ -70,6 +77,7 @@ const appts = [
     plano_saude: "IPASGO",
     tipo_exame: "us",
     nome_exame: "Tireóide",
+    telephone: "+5562985401969"
   },
   {
     horario: "2024-05-11T02:46:00.000Z",
@@ -79,6 +87,7 @@ const appts = [
     plano_saude: "UNIMED",
     tipo_exame: "ECO",
     nome_exame: "Transesofágico",
+    telephone: "+5562985401969"
   },
   {
     horario: "2024-05-11T03:16:00.000Z",
@@ -88,6 +97,7 @@ const appts = [
     plano_saude: "secretaria",
     tipo_exame: "us",
     nome_exame: "US Abdomen",
+    telephone: "+5562985401969"
   },
   {
     horario: "2024-05-11T03:46:00.000Z",
@@ -97,6 +107,7 @@ const appts = [
     plano_saude: "CASSI",
     tipo_exame: "TC",
     nome_exame: "Coronária",
+    telephone: "+5562985401969"
   },
   {
     horario: "2024-05-11T04:16:00.000Z",
@@ -106,6 +117,7 @@ const appts = [
     plano_saude: "PARTICULAR",
     tipo_exame: "us",
     nome_exame: "Abdomen",
+    telephone: "+5562985401969"
   },
 ];
 

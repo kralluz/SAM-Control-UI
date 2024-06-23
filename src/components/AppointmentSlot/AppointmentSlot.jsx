@@ -1,5 +1,6 @@
 import AvailableSlot from "../AvailableSlot/AvailableSlot";
 import OccupiedSlot from "../OccupiedSlot/OccupiedSlot";
+import  './AppointmentSlot'
 
 const AppointmentSlot = ({
   appointment,

@@ -3,16 +3,13 @@ import { FaPhone, FaWhatsapp, FaTrash, FaRegEdit } from "react-icons/fa";
 import Modal from "react-modal";
 import "./AppointmentOptions.css";
 import PhoneModal from "../PhoneModal/PhoneModal";
-import WhatsappModal from "../WhatsappModal/WhatsappModal";
 import TrashModal from "../TrashModal/TrashModal";
 import EditModal from "../EditModal/EditModal";
 
 Modal.setAppElement("#root");
 
-
-const AppointmentOptions = () => {
+const AppointmentOptions = ({ telephone }) => {
   const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
-  const [isWhatsappModalOpen, setIsWhatsappModalOpen] = useState(false);
   const [isTrashModalOpen, setIsTrashModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
@@ -20,11 +17,7 @@ const AppointmentOptions = () => {
     console.log("Realizando ligação...");
     setIsPhoneModalOpen(false);
   };
-
-  const handleWhatsapp = () => {
-    console.log("Enviando mensagem no WhatsApp...");
-    setIsWhatsappModalOpen(false);
-  };
+;
 
   const handleDelete = () => {
     console.log("Excluindo registro...");
@@ -35,11 +28,14 @@ const AppointmentOptions = () => {
     console.log("Salvando novos dados:", newData);
     setIsEditModalOpen(false);
   };
+  const onWhatsapp = () => {
+    window.open(`https://api.whatsapp.com/send?phone=${telephone}&text=Olá, tudo bem?`, '_blank');
+  };
 
   return (
     <div className="appointment-options">
       <button
-        onClick={() => setIsWhatsappModalOpen(true)}
+        onClick={onWhatsapp}
         data-title="Enviar Mensagem no WhatsApp"
       >
         <FaWhatsapp size={25} />
@@ -57,12 +53,7 @@ const AppointmentOptions = () => {
       <PhoneModal
         isOpen={isPhoneModalOpen}
         onRequestClose={() => setIsPhoneModalOpen(false)}
-        onCall={handleCall}
-      />
-      <WhatsappModal
-        isOpen={isWhatsappModalOpen}
-        onRequestClose={() => setIsWhatsappModalOpen(false)}
-        onWhatsapp={handleWhatsapp}
+        telephone={telephone}
       />
       <TrashModal
         isOpen={isTrashModalOpen}

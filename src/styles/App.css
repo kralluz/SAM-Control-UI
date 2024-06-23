@@ -1,175 +1,68 @@
 @font-face {
-  font-family: 'UberMoveBold';
-  src: url('../../assets/UberMoveBold.otf') format('opentype');
+  font-family: "UberMoveBold";
+  src: url("../../assets/UberMoveBold.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'UberMoveMedium';
-  src: url('../../assets/UberMoveMedium.otf') format('opentype');
+  font-family: "UberMoveMedium";
+  src: url("../../assets/UberMoveMedium.otf") format("opentype");
 }
 
 body {
-  font-family: 'UberMoveMedium', sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'roboto', sans-serif;
-}
-
-
-.toggle-container {
-  position: relative;
-  width: 60px;
-  height: 30px;
-}
-
-.toggle-checkbox {
-  display: none;
-}
-
-.toggle-label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  width: 60px;
-  height: 30px;
-  background-color: #111;
-  border-radius: 50px;
-  padding: 5px;
-  position: relative;
-  overflow: hidden;
-}
-
-.toggle-ball {
-  width: 22px;
-  height: 22px;
-  background-color: #ffd900; /* Cor do sol */
-  border-radius: 50%;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  overflow: visible;
-  box-shadow: 0 0 8px 2px rgba(255, 215, 0, 0.8); /* Sombra do sol */
-}
-
-.toggle-checkbox:checked + .toggle-label .toggle-ball {
-  transform: translateX(30px);
-  background-color: #ffffff; /* Cor da lua */
-  box-shadow: 0 0 5px 3px rgba(160, 160, 160, 0.5); /* Sombra suave para a lua */
-}
-
-/* Crateras da Lua */
-.toggle-ball::before,
-.toggle-ball::after,
-.toggle-ball::first-line,
-.toggle-ball::first-letter {
-  content: '';
-  position: absolute;
-  background-color: rgba(77, 77, 77, 0.8);
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.toggle-ball::before {
-  width: 4px;
-  height: 4px;
-  top: 8px;
-  left: 3px;
-}
-
-.toggle-ball::after {
-  width: 3px;
-  height: 3px;
-  top: 1px;
-  left: 10px;
-}
-
-.toggle-ball::first-line {
-  width: 5px;
-  height: 5px;
-  top: 15px;
-  left: 15px;
-}
-
-.toggle-ball::first-letter {
-  width: 2px;
-  height: 2px;
-  top: 5px;
-  left: 18px;
-}
-
-.toggle-checkbox:checked + .toggle-label .toggle-ball::before,
-.toggle-checkbox:checked + .toggle-label .toggle-ball::after,
-.toggle-checkbox:checked + .toggle-label .toggle-ball::first-line,
-.toggle-checkbox:checked + .toggle-label .toggle-ball::first-letter {
-  opacity: 1; /* Exibe as crateras no modo lua */
-}
-
-
-body {
+  font-family: "UberMoveMedium", sans-serif;
+  /* background: linear-gradient(to bottom, #1E8178, #A6D7D2); */
+  background-size: 100% 200%, cover; 
+  /* animation: gradientMovement 30s infinite cubic-bezier(0.4, 0, 0.2, 1); */
   font-size: 16px;
+}
+
+@keyframes gradientMovement {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "roboto", sans-serif;
 }
 
 @media screen and (max-width: 600px) {
   body {
-      font-size: 14px;
+    font-size: 14px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   body {
-      font-size: 18px;
+    font-size: 18px;
   }
 }
 
 h1 {
-  font-size: 2.5vw; /* 2.5% da largura da viewport */
+  font-size: 2.5vw;
 }
 
 p {
-  font-size: 1.5vw; /* 1.5% da largura da viewport */
+  font-size: 1.5vw;
 }
 
-
-.texto-adaptavel {
-  font-size: 2vw; /* Tamanho da fonte em relação à largura da viewport */
-  max-width: 100%; /* Evita que o texto vaze da div */
-  text-align: center; /* Centraliza o texto horizontalmente */
+.appointment-enter {
+  opacity: 0;
+}
+.appointment-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
 }
 
-@media screen and (max-width: 1440px) {
-  .texto-adaptavel {
-      font-size: 30px; /* Tamanho da fonte para telas maiores */
-  }
-  
-}
-
-
-.Modal {
-  background: #1e1e1e;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 500px;
-  margin: auto;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  color: #e0e0e0;
-  animation: fadeInUp 0.5s ease-out;
-}
-
-
-.Overlay {
-  background: rgba(0, 0, 0, 0.85);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.appointment-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
 }
