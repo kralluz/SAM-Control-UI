@@ -129,7 +129,7 @@ const AddApptModal = ({ isOpen, onRequestClose }) => {
               <option value="Unimed">Unimed</option>
               <option value="CASSI">CASSI</option>
               <option value="Bradesco Saúde">Bradesco Saúde</option>
-              <option value="Saúde Caixa">Saúde Caixa</option>
+              <option value="Caixa">Saúde Caixa</option>
             </select>
           </div>
 
