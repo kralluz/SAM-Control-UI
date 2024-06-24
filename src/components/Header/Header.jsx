@@ -1,3 +1,4 @@
+import { FaRegEye } from "react-icons/fa";
 import React, { useContext, useState } from "react";
 
 import "./header.css";
@@ -60,9 +61,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
           <div className="search-results">
             <ul>
               {filteredAppointments.map((appointment) => {
-                // Remover os três primeiros caracteres (+55) do telefone
                 const formattedTelephone = appointment.telephone.slice(3);
-                // Adicionar os parênteses no DDD (código de área)
                 const ddd = formattedTelephone.slice(0, 2);
                 const rest = formattedTelephone.slice(2);
                 const formattedPhoneNumber = `(${ddd}) ${rest.slice(
@@ -70,13 +69,32 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                   4
                 )}-${rest.slice(4)}`;
                 return (
+                  <>
                     <li key={appointment.id}>
-                    <span>{new Date(appointment.horario).toLocaleDateString('pt-BR')} - </span>
-                    <span>{new Date(appointment.horario).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}</span>
-                    <br />
-                    <span>{appointment.patient_name}{"   "}{formattedPhoneNumber}</span>
-                  </li>
-                  
+                      <span>
+                        {new Date(appointment.horario).toLocaleDateString(
+                          "pt-BR"
+                        )}{" "}
+                        -{" "}
+                      </span>
+                      <span>
+                        {new Date(appointment.horario).toLocaleTimeString(
+                          "pt-BR",
+                          { hour: "2-digit", minute: "2-digit" }
+                        )}
+                        {/*                       <button className="eye-button">
+                        <FaRegEye />
+                      </button> */}
+                      </span>
+                      <br />
+                      <span>
+                        {appointment.patient_name}
+                        {"   "}
+                        {formattedPhoneNumber}
+                      </span>
+                      {"   "}
+                    </li>
+                  </>
                 );
               })}
             </ul>

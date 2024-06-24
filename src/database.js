@@ -106,7 +106,7 @@ const appts = [
     patient_name: "Carlos Silva",
     plano_saude: "secretaria",
     tipo_exame: "us",
-    nome_exame: "US Abdomen",
+    nome_exame: "Abdomen",
     telephone: "+5562985401969"
   },
   {
