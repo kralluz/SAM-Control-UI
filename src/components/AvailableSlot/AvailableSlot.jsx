@@ -3,7 +3,7 @@ import "./AvailableSlot.css";
 import { useState } from "react";
 import AddApptModal from "../AddApptModal/AddApptModal";
 
-const AvailableSlot = ({ appointment, darkMode, handleAddEditAppointment }) => {
+const AvailableSlot = ({ appointment, darkMode }) => {
   const [addModal, setAddModal] = useState(false);
 
   const handleEdit = (newData) => {

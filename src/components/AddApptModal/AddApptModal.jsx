@@ -1,17 +1,20 @@
+import React, { useState, useContext, useEffect } from "react";
 import Modal from "react-modal";
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { AppointmentsContext } from "../../providers/appointmentsProvider";
 import "./AddApptModal.css";
 
 Modal.setAppElement("#root");
 
-const AddApptModal = ({ isOpen, onRequestClose, onEdit }) => {
+const AddApptModal = ({ isOpen, onRequestClose }) => {
+  const { createAppointment } = useContext(AppointmentsContext);
   const [formData, setFormData] = useState({
     nome: "",
     telefone: "",
     exame: "",
     plano: "",
   });
+  const [addedSuccessfully, setAddedSuccessfully] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -20,9 +23,28 @@ const AddApptModal = ({ isOpen, onRequestClose, onEdit }) => {
 
   const handleSave = (event) => {
     event.preventDefault();
-    onEdit(formData);
+
+    const newAppointment = {
+      horario: new Date().toISOString(),
+      ocupado: true,
+      doctor_id: "2",
+      patient_name: formData.nome,
+      plano_saude: formData.plano,
+      tipo_exame: "ECO",
+      nome_exame: formData.exame,
+      telephone: formData.telefone,
+    };
+
+    createAppointment(newAppointment);
+    setAddedSuccessfully(true);
     onRequestClose();
   };
+
+  useEffect(() => {
+    if (addedSuccessfully) {
+      console.log("Agendamento adicionado com sucesso!");
+    }
+  }, [addedSuccessfully]);
 
   return (
     <Modal

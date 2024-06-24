@@ -87,3 +87,129 @@
 .toggle-checkbox:checked + .toggle-label .toggle-ball::first-letter {
   opacity: 1;
 }
+
+.search-results {
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  width: 40%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 1;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .search-results {
+    display: block;
+  }
+}
+
+.search-results ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}
+
+.search-input-container {
+  position: relative;
+}
+
+.search-input-container input {
+  padding-right: 30px; /* Espaço para o botão "X" */
+}
+
+.clear-button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 8px;
+  color: #ccc;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  color: #fdfdfd;
+  background-color: #525252;
+}
+
+.clear-button:hover {
+  color: #fdfdfd;
+  background-color: #000;
+}
+
+.search-results {
+  display: none;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  text-align: center;
+  padding: 10px;
+  overflow: hidden;
+  transition: height 0.3s ease, opacity 0.3s ease;
+  max-height: 300px; /* Altura máxima da div */
+  overflow-y: auto; /* Adicionar scroll vertical se necessário */
+  border: 1px solid #ccc; /* Adicionar borda para separar visualmente */
+  padding: 10px; /* Adicionar um espaço interno */
+  scroll-behavior: smooth;
+}
+
+/* Estilização da barra de rolagem */
+.search-results::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+  background-color: #f5f5f5; /* Cor de fundo da barra de rolagem */
+}
+
+/* Estilização do indicador de posição (thumb) */
+.search-results::-webkit-scrollbar-thumb {
+  background-color: #ddd; /* Cor do indicador de posição */
+  border-radius: 4px; /* Arredondar as bordas do indicador */
+}
+
+/* Alterar a aparência do indicador de posição quando estiver sendo clicado */
+.search-results::-webkit-scrollbar-thumb:active {
+  background-color: #bbb; /* Cor do indicador de posição quando clicado */
+}
+
+@media (min-width: 768px) {
+  .search-results {
+    display: block;
+  }
+}
+
+.search-results ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-results li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-results li:last-child {
+  border-bottom: none;
+}

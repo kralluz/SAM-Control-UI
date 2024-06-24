@@ -4,7 +4,7 @@ import "react-calendar/dist/Calendar.css";
 import "../../styles/App.css";
 import "../../styles/light-theme.css";
 import "../../styles/dark-theme.css";
-import { format, parseISO } from "date-fns";
+import { format } from "date-fns";
 import AppointmentSlot from "../AppointmentSlot/AppointmentSlot";
 import "./AppointmentList.css";
 
@@ -42,7 +42,7 @@ const AppointmentList = ({
       }
       setFilteredAppointments(filteredAppointments);
       setIsFiltering(false);
-    }, 1000); // Tempo para simular a animação
+    }, 1000); 
   };
 
   return (

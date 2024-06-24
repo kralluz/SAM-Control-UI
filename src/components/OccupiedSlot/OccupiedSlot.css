@@ -14,6 +14,12 @@
   text-align: right;
 }
 
+.slot-time h6 {
+  font-weight: bold;
+  margin: 0;
+  text-align: right;
+}
+
 @media screen and (max-width: 768px) {
   .slot-time h3 {
     font-size: 20px;

@@ -10,7 +10,7 @@ const TrashModal = ({ isOpen, onRequestClose, onDelete }) => {
     >
       <h2>Excluir</h2>
       <p>Deseja excluir este registro?</p>
-      <button onClick={onDelete} className="confirm-button">
+      <button onClick={() => onDelete()} className="confirm-button">
         Sim
       </button>
       <button onClick={onRequestClose} className="cancel-button">

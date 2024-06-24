@@ -1,23 +1,30 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Modal from "react-modal";
+import { AppointmentsContext } from "../../providers/appointmentsProvider";
 
-const EditModal = ({ isOpen, onRequestClose, onEdit }) => {
-  const [newData, setNewData] = useState("");
-
-  const [formData, setFormData] = useState({
-    nome: "",
-    telefone: "",
+const EditModal = ({ isOpen, onRequestClose, data }) => {
+  const { updateAppointment } = useContext(AppointmentsContext);
+  const [editData, setEditData] = useState({
+    id: data.id,
+    horario: data.horario,
+    ocupado: data.ocupado,
+    doctor_id: data.doctor_id,
+    patient_name: data.patient_name || "",
+    plano_saude: data.plano_saude || "",
+    tipo_exame: data.tipo_exame || "",
+    nome_exame: data.nome_exame || "",
+    telephone: data.telephone || "",
   });
 
   const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
+    setEditData({
+      ...editData,
       [e.target.name]: e.target.value,
     });
   };
 
   const handleSave = () => {
-    onEdit(newData);
+    updateAppointment(data.id, editData);
     onRequestClose();
   };
 
@@ -30,14 +37,14 @@ const EditModal = ({ isOpen, onRequestClose, onEdit }) => {
     >
       <h2>Editar Dados</h2>
       <div>
-        <label htmlFor="nome" className="Label">
+        <label htmlFor="patient_name" className="Label">
           Nome:
         </label>
         <input
           type="text"
-          id="nome"
-          name="nome"
-          value={formData.nome}
+          id="patient_name"
+          name="patient_name"
+          value={editData.patient_name}
           onChange={handleInputChange}
           className="Input"
           required
@@ -45,14 +52,14 @@ const EditModal = ({ isOpen, onRequestClose, onEdit }) => {
       </div>
 
       <div className="FormGroup">
-        <label htmlFor="telefone" className="Label">
+        <label htmlFor="telephone" className="Label">
           Telefone:
         </label>
         <input
           type="tel"
-          id="telefone"
-          name="telefone"
-          value={formData.telefone}
+          id="telephone"
+          name="telephone"
+          value={editData.telephone}
           onChange={handleInputChange}
           className="Input"
           required
@@ -60,14 +67,14 @@ const EditModal = ({ isOpen, onRequestClose, onEdit }) => {
       </div>
 
       <div className="FormGroup">
-        <label htmlFor="exame" className="Label">
+        <label htmlFor="nome_exame" className="Label">
           Nome do Exame:
         </label>
         <input
           type="text"
-          id="exame"
-          name="exame"
-          value={formData.exame}
+          id="nome_exame"
+          name="nome_exame"
+          value={editData.nome_exame}
           onChange={handleInputChange}
           className="Input"
           required
@@ -75,13 +82,13 @@ const EditModal = ({ isOpen, onRequestClose, onEdit }) => {
       </div>
 
       <div className="FormGroup">
-        <label htmlFor="plano" className="Label">
+        <label htmlFor="plano_saude" className="Label">
           Plano de Saúde:
         </label>
         <select
-          id="plano"
-          name="plano"
-          value={formData.plano}
+          id="plano_saude"
+          name="plano_saude"
+          value={editData.plano_saude}
           onChange={handleInputChange}
           className="Input"
           required
