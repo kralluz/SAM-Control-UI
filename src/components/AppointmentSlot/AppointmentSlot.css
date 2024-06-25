@@ -1,11 +1,4 @@
-.appointment-slot {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  padding: 10px;
-  border-radius: 5px;
-}
+
 
 .slot-time h3 {
   font-size: 30px;
@@ -20,12 +13,8 @@
 }
 
 .available {
-  border: 2px dashed #787878;
   cursor: pointer;
-}
-
-.occupied {
-  border: 2px solid #787878;
+  border: 1px solid #DDD0E8;
 }
 
 .dark-theme {
@@ -44,6 +33,7 @@
   justify-content: space-between;
   font-size: 30px;
   font-weight: bold;
+  padding-bottom: 16px !important;  
 }
 
 .add-appointment {
@@ -64,20 +54,6 @@
   width: 100%;
   display: flex;
   height: 100%;
-}
-
-.appointment-details {
-  width: 100%;
-  display: flex;
-  padding-top: 10px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
-}
-
-.appointment-details p {
-  font-size: 28px;
-  font-weight: 500;
 }
 
 .edit-button-container {
@@ -121,6 +97,7 @@
   box-shadow: var(--sombra);
   font-size: var(--fonte-padrao);
 }
+
 .unimed {
   background-image: linear-gradient(45deg, #088755 20%, #10402d);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -129,20 +106,24 @@
   font-family: Arial, sans-serif;
   font-weight: 600;
 }
+
 .cassi {
   background-image: linear-gradient(45deg, #4b5db8 20%, #1933b0);
   color: white;
 }
+
 .saude-caixa {
-  background:  #005ca9;
+  background: #005ca9;
   font-weight: 600;
   color: white;
   font-family: Arial, sans-serif;
   font-weight: 600;
 }
+
 .saude-caixa span {
   color: #f7a600;
 }
+
 .particular {
   background-image: linear-gradient(65deg, rgb(89, 89, 89) 1%, rgb(0, 0, 0));
 
@@ -151,12 +132,14 @@
   font-family: Arial, sans-serif;
   font-weight: 600;
 }
+
 .bradesco-saude {
   background-image: linear-gradient(45deg, #cb455b 70%, #f390a1);
   color: white;
   font-family: Arial, sans-serif;
   font-weight: 600;
 }
+
 .secretaria {
   background-image: linear-gradient(45deg, #5d5d5d 50%, #3d3133);
   color: white;

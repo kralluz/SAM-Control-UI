@@ -65,7 +65,7 @@ header.light-theme h1 {
 
 .appointment-slot.light-theme {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #DDD0E8;
   border-radius: 5px;
   margin-bottom: 10px;
 }
@@ -78,6 +78,8 @@ header.light-theme h1 {
 .available.light-theme {
   background-color: #f9f9f9;
   color: #333;
+  border: solid 1px #DDD0E8;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .appointment-slot.light-theme p {

@@ -43,7 +43,7 @@ const AppointmentOptions = ({ data }) => {
 
   return (
     <>
-      <ButtonGroup>
+      <ButtonGroup style={{display:'flex', flexWrap:'wrap', alignItems:'flex-end'}}>
         <RoundButton
           onClick={onWhatsapp}
           icon={<FaWhatsapp size={22} />}

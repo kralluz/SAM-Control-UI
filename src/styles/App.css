@@ -11,9 +11,10 @@
 body {
   font-family: "UberMoveMedium", sans-serif;
   /* background: linear-gradient(to bottom, #1E8178, #A6D7D2); */
-  background-size: 100% 200%, cover; 
+  /* background-size: 100% 200%, cover;  */
   /* animation: gradientMovement 30s infinite cubic-bezier(0.4, 0, 0.2, 1); */
   font-size: 16px;
+  /* background-color: #ffffff!important; */
 }
 
 @keyframes gradientMovement {

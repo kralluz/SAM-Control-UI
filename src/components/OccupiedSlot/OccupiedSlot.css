@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  padding: 10px;
+  padding: 10px 40px;
   border-radius: 5px;
 }
 
@@ -27,12 +27,12 @@
 }
 
 .available {
-  border: 2px dashed #787878;
   cursor: pointer;
+  border: solid 1px #DDD0E8;
 }
 
 .occupied {
-  border: 2px solid #787878;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .slot-time {
@@ -41,6 +41,7 @@
   justify-content: space-between;
   font-size: 30px;
   font-weight: bold;
+  padding-bottom: 16px !important;
 }
 
 .add-appointment {
@@ -59,17 +60,17 @@
 
 .appointment-content {
   width: 100%;
-  display: flex;
   height: 100%;
+  display: flex;
+  justify-content: space-between ;
+
 }
 
 .appointment-details {
-  width: 100%;
   display: flex;
-  padding-top: 10px;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
+  gap: 10px;
+  height: 100%;
 }
 
 .appointment-details p {

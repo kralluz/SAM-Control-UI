@@ -1,26 +1,25 @@
 .appointment-slot {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: relative;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #E3F2FD !important;
+}
+
+.slot-time h3 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
   .slot-time h3 {
-    font-size: 30px;
-    font-weight: bold;
-    margin: 0;
+    font-size: 20px;
   }
-  
-  @media screen and (max-width: 768px) {
-    .slot-time h3 {
-      font-size: 20px;
-    }
-  }
-  
-  .available {
-    border: 2px dashed #787878;
-    cursor: pointer;
-  }
-  
+}
+
+.available {
+  cursor: pointer;
+}

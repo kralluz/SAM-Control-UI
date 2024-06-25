@@ -83,9 +83,9 @@ const AppointmentList = ({
           ? format(selectedDate, "dd/MM/yyyy")
           : "Nenhuma data selecionada"}
       </h2>
-
-      <Tabs variant="soft-rounded" colorScheme='green'>
-        <TabList>
+      <hr/>
+      <Tabs variant="soft-rounded" colorScheme='green' >
+        <TabList style={{display:'flex', flexWrap:'wrap', alignItems:'flex-end'}}>
           {renderTab("Todos", "Todos")}
           {renderTab("Disponiveis", "Disponíveis")}
           {renderTab("us", "Ultrassom")}
