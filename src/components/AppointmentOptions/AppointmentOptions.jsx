@@ -1,11 +1,14 @@
 import React, { useContext, useState } from "react";
 import { FaPhone, FaWhatsapp, FaTrash, FaRegEdit } from "react-icons/fa";
+import { RiEdit2Fill } from "react-icons/ri";
+import { ButtonGroup } from "@chakra-ui/react";
 import Modal from "react-modal";
 import "./AppointmentOptions.css";
 import PhoneModal from "../PhoneModal/PhoneModal";
 import TrashModal from "../TrashModal/TrashModal";
 import EditModal from "../EditModal/EditModal";
 import { AppointmentsContext } from "../../providers/appointmentsProvider";
+import RoundButton from "../RoundButton/RoundButton.jsx";
 
 Modal.setAppElement("#root");
 
@@ -39,19 +42,30 @@ const AppointmentOptions = ({ data }) => {
   };
 
   return (
-    <div className="appointment-options">
-      <button onClick={onWhatsapp} data-title="Enviar Mensagem no WhatsApp">
-        <FaWhatsapp size={25} />
-      </button>
-      <button onClick={() => setIsPhoneModalOpen(true)} data-title="Ligar">
-        <FaPhone />
-      </button>
-      <button onClick={() => setIsTrashModalOpen(true)} data-title="Excluir">
-        <FaTrash />
-      </button>
-      <button onClick={() => setIsEditModalOpen(true)} data-title="Editar">
-        <FaRegEdit size={25} />
-      </button>
+    <>
+      <ButtonGroup>
+        <RoundButton
+          onClick={onWhatsapp}
+          icon={<FaWhatsapp size={22} />}
+          title="Enviar Mensagem no WhatsApp"
+        />
+        <RoundButton
+          onClick={() => setIsPhoneModalOpen(true)}
+          icon={<FaPhone />}
+          title="Ligar"
+        />
+        <RoundButton
+          onClick={() => setIsTrashModalOpen(true)}
+          icon={<FaTrash />}
+          title="Excluir"
+        />
+        <RoundButton
+          onClick={() => setIsEditModalOpen(true)}
+          icon={<RiEdit2Fill />}
+          title="Editar"
+        />
+      </ButtonGroup>
+
       <PhoneModal
         isOpen={isPhoneModalOpen}
         onRequestClose={() => setIsPhoneModalOpen(false)}
@@ -68,7 +82,7 @@ const AppointmentOptions = ({ data }) => {
         onEdit={handleEdit}
         data={data}
       />
-    </div>
+    </>
   );
 };
 

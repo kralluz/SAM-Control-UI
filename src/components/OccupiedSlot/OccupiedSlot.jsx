@@ -2,11 +2,11 @@ import { format, parseISO } from "date-fns";
 import AppointmentOptions from "../AppointmentOptions/AppointmentOptions";
 import getPlanoSaudeClass from "../../functions/getPlanoSaudeClass";
 import getExameClass from "../../functions/getExameClass";
-import "./OccupiedSlot.css"; // Certifique-se de que o arquivo CSS correto está sendo importado
+import "./OccupiedSlot.css";
 
 const OccupiedSlot = ({ appointment, darkMode, handleDeleteAppointment }) => {
   const highlightX = (text) => {
-    const parts = text.split(/(x)/i); // Split text by 'x' or 'X'
+    const parts = text.split(/(x)/i);
     return parts.map((part, index) =>
       part.toLowerCase() === "x" ? (
         <span key={index} className="highlight-x">
@@ -20,9 +20,8 @@ const OccupiedSlot = ({ appointment, darkMode, handleDeleteAppointment }) => {
 
   return (
     <div
-      className={`appointment-slot occupied ${
-        darkMode ? "dark-theme" : "light-theme"
-      }`}
+      className={`appointment-slot occupied ${darkMode ? "dark-theme" : "light-theme"
+        }`}
     >
       <div className="slot-time">
         <h3>{format(parseISO(appointment.horario), "HH:mm")}</h3>
@@ -47,7 +46,7 @@ const OccupiedSlot = ({ appointment, darkMode, handleDeleteAppointment }) => {
         </div>
         <AppointmentOptions
           data={appointment}
-          onDelete={() => handleDeleteAppointment(appointment.id)} // Passa o ID para a função handleDeleteAppointment
+          onDelete={() => handleDeleteAppointment(appointment.id)}
         />
       </div>
     </div>

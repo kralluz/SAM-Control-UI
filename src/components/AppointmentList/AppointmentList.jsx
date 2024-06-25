@@ -8,7 +8,22 @@ import "../../styles/dark-theme.css";
 import { format } from "date-fns";
 import AppointmentSlot from "../AppointmentSlot/AppointmentSlot";
 import "./AppointmentList.css";
-import { Button, ButtonGroup } from "@chakra-ui/react";
+const tabStyles = {
+  base: {
+    _hover: {
+      bg: "#A3E4C3",
+      color: "#1A202C",
+      boxShadow: "0 6px 8px rgba(0, 0, 0, 0.15)",
+      transform: "translateY(-2px)"
+    },
+    _active: {
+      bg: "#81D0B1",
+      color: "#1A202C",
+      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+      transform: "scale(0.95)"
+    }
+  }
+};
 
 const AppointmentList = ({
   appointments,
@@ -17,8 +32,7 @@ const AppointmentList = ({
   handleAddEditAppointment,
   handleDeleteAppointment,
 }) => {
-  const [filteredAppointments, setFilteredAppointments] =
-    useState(appointments);
+  const [filteredAppointments, setFilteredAppointments] = useState(appointments);
   const [isFiltering, setIsFiltering] = useState(false);
   const [activeFilter, setActiveFilter] = useState("Todos");
 
@@ -35,19 +49,26 @@ const AppointmentList = ({
       if (type === "Todos") {
         filteredAppointments = appointments;
       } else if (type === "Disponiveis") {
-        filteredAppointments = appointments.filter(
-          (appointment) => !appointment.ocupado
-        );
+        filteredAppointments = appointments.filter((appointment) => !appointment.ocupado);
       } else {
-        filteredAppointments = appointments.filter(
-          (appointment) =>
-            appointment.tipo_exame.toLowerCase() === type.toLowerCase()
+        filteredAppointments = appointments.filter((appointment) =>
+          appointment.tipo_exame.toLowerCase() === type.toLowerCase()
         );
       }
       setFilteredAppointments(filteredAppointments);
       setIsFiltering(false);
     }, 1000);
   };
+
+  const renderTab = (type, label) => (
+    <Tab
+      key={type}
+      onClick={() => handleFilterAppointments(type)}
+      {...tabStyles.base}
+    >
+      {label}
+    </Tab>
+  );
 
   return (
     <div className={`agendamentos ${darkMode ? "dark-theme" : "light-theme"}`}>
@@ -58,24 +79,18 @@ const AppointmentList = ({
           : "Nenhuma data selecionada"}
       </h2>
 
-      <Tabs variant="enclosed">
+      <Tabs variant="soft-rounded" colorScheme='green'>
         <TabList>
-          <Tab onClick={() => handleFilterAppointments("Todos")}>Todos</Tab>
-          <Tab onClick={() => handleFilterAppointments("Disponiveis")}>
-            Disponíveis
-          </Tab>
-          <Tab onClick={() => handleFilterAppointments("us")}>Ultrassom</Tab>
-          <Tab onClick={() => handleFilterAppointments("tc")}>Tomografia</Tab>
-          <Tab onClick={() => handleFilterAppointments("eco")}>
-            Ecocardiograma
-          </Tab>
+          {renderTab("Todos", "Todos")}
+          {renderTab("Disponiveis", "Disponíveis")}
+          {renderTab("us", "Ultrassom")}
+          {renderTab("tc", "Tomografia")}
+          {renderTab("eco", "Ecocardiograma")}
         </TabList>
         <TabPanels>
           <TabPanel>
             <TransitionGroup
-              className={`appointments-container ${
-                darkMode ? "dark-theme" : "light-theme"
-              }`}
+              className={`appointments-container ${darkMode ? "dark-theme" : "light-theme"}`}
             >
               {isFiltering ? (
                 <CSSTransition key="filtering" timeout={500} classNames="fade">
@@ -102,11 +117,8 @@ const AppointmentList = ({
           </TabPanel>
         </TabPanels>
       </Tabs>
-
       <TransitionGroup
-        className={`appointments-container ${
-          darkMode ? "dark-theme" : "light-theme"
-        }`}
+        className={`appointments-container ${darkMode ? "dark-theme" : "light-theme"}`}
       >
         {isFiltering ? (
           <CSSTransition key="filtering" timeout={500} classNames="fade">
@@ -135,3 +147,4 @@ const AppointmentList = ({
 };
 
 export default AppointmentList;
+  
