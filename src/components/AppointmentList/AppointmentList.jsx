@@ -16,10 +16,15 @@ const tabStyles = {
       boxShadow: "0 6px 8px rgba(0, 0, 0, 0.15)",
       transform: "translateY(-2px)"
     },
+    _selected: {
+      bg: "#C6F6D5",
+      color: "#276749",
+      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
+    },
     _active: {
       bg: "#81D0B1",
       color: "#1A202C",
-      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2)",
+      boxShadow: "0 2px 4px rgba(0, 0, 0, 0.2 )",
       transform: "scale(0.95)"
     }
   }
@@ -147,4 +152,3 @@ const AppointmentList = ({
 };
 
 export default AppointmentList;
-  

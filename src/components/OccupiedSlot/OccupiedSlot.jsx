@@ -3,8 +3,10 @@ import AppointmentOptions from "../AppointmentOptions/AppointmentOptions";
 import getPlanoSaudeClass from "../../functions/getPlanoSaudeClass";
 import getExameClass from "../../functions/getExameClass";
 import "./OccupiedSlot.css";
+import { formatTelephone } from "../../functions/formatTelephone";
 
 const OccupiedSlot = ({ appointment, darkMode, handleDeleteAppointment }) => {
+  const formattedPhoneNumber = formatTelephone(appointment.telephone);
   const highlightX = (text) => {
     const parts = text.split(/(x)/i);
     return parts.map((part, index) =>
@@ -27,7 +29,7 @@ const OccupiedSlot = ({ appointment, darkMode, handleDeleteAppointment }) => {
         <h3>{format(parseISO(appointment.horario), "HH:mm")}</h3>
         <div>
           <h3>{appointment.patient_name || "Não informado"}</h3>
-          <h6>{appointment.telephone}</h6>
+          <h6>{formattedPhoneNumber}</h6>
         </div>
       </div>
       <div className="appointment-content">
