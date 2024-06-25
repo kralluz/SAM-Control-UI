@@ -1,9 +1,15 @@
-import { Input, InputGroup, InputRightElement, IconButton, Box, Text } from "@chakra-ui/react";
-import { FaTimes } from "react-icons/fa";
-import { FaRegEye } from "react-icons/fa";
 import React, { useContext, useState } from "react";
-
-import "./header.css";
+import {
+  Input,
+  InputGroup,
+  InputRightElement,
+  IconButton,
+  Box,
+  Text,
+  Stack,
+  Button,
+} from "@chakra-ui/react";
+import { FaTimes, FaRegEye } from "react-icons/fa";
 import { AppointmentsContext } from "../../providers/appointmentsProvider";
 
 const Header = ({ toggleDarkMode, darkMode }) => {
@@ -31,7 +37,7 @@ const Header = ({ toggleDarkMode, darkMode }) => {
           }`}
       >
         <h1>IMEC Diagnóstico Agenda</h1>
-        <InputGroup>
+        <InputGroup style={{width:'300px'}}>
           <Input
             type="text"
             placeholder="Nome ou Número"
@@ -63,16 +69,24 @@ const Header = ({ toggleDarkMode, darkMode }) => {
         </div>
       </header>
       {searchTerm && (
-        <Box mt={4}>
+        <Box mt={4} d="flex" justifyContent="center">
           <Text fontSize="lg">Resultados:</Text>
-          <ul>
+          <Stack spacing={4} mt={4}>
             {filteredAppointments.map((appointment) => {
               const formattedTelephone = appointment.telephone.slice(3);
               const ddd = formattedTelephone.slice(0, 2);
               const rest = formattedTelephone.slice(2);
               const formattedPhoneNumber = `(${ddd}) ${rest.slice(0, 4)}-${rest.slice(4)}`;
               return (
-                <li key={appointment.id}>
+                <Box
+                  key={appointment.id}
+                  maxW="300px"
+                  bg={darkMode ? "gray.700" : "gray.100"}
+                  p={4}
+                  rounded="md"
+                  shadow="md"
+                  textAlign="center"
+                >
                   <Text>
                     {new Date(appointment.horario).toLocaleDateString("pt-BR")} -{" "}
                     {new Date(appointment.horario).toLocaleTimeString("pt-BR", {
@@ -80,13 +94,24 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                       minute: "2-digit",
                     })}
                   </Text>
-                  <Text>
-                    {appointment.patient_name} {formattedPhoneNumber}
-                  </Text>
-                </li>
+                  <Text>{appointment.patient_name}</Text>
+                  <Text>{formattedPhoneNumber}</Text>
+                  <Button
+                    mt={2}
+                    colorScheme="blue"
+                    rightIcon={<FaRegEye />}
+                    variant="outline"
+                    onClick={() => {
+                      // Implement your logic for viewing appointment details
+                      console.log("View appointment:", appointment.id);
+                    }}
+                  >
+                    Ver Agendamento
+                  </Button>
+                </Box>
               );
             })}
-          </ul>
+          </Stack>
         </Box>
       )}
     </>
