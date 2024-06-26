@@ -1,4 +1,12 @@
-.Modal {
+.ModalSearch {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  border-radius: 5px;
+  width: 400px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
   background-color: rgba(0, 0, 0, 0);
   box-shadow: none;
   height: 80vw;
@@ -28,15 +36,15 @@
   text-align: center;
 }
 
-.Modal::-webkit-scrollbar {
+.ModalSearch::-webkit-scrollbar {
   width: 12px;
   background: transparent;
 }
 
-.Modal::-webkit-scrollbar-track {
+.ModalSearch::-webkit-scrollbar-track {
   background: transparent;
 }
-.Modal::-webkit-scrollbar-thumb {
+.ModalSearch::-webkit-scrollbar-thumb {
   background-color: #ffffff44;
   border-radius: 20px;
   border: 3px solid transparent;
@@ -44,6 +52,6 @@
   transition: background-color 0.3s, transform 0.3s;
 }
 
-.Modal::-webkit-scrollbar-thumb:hover {
+.ModalSearch::-webkit-scrollbar-thumb:hover {
   background-color: #b9b6b644;
 }

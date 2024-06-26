@@ -42,7 +42,7 @@ const SearchModal = ({ isOpen, onRequestClose }) => {
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      className="Modal"
+      className="ModalSearch"
       overlayClassName="Overlay"
     >
       <motion.div
