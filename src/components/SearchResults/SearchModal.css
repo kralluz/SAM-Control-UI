@@ -1,0 +1,58 @@
+.Modal {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+  overflow-y: auto;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+.input-search-box {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Ajuste conforme necessário */
+}
+
+.input-search-box input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 6px;
+  background-color: #c6f6d5;
+  color: #276749;
+  font-family: 'Elephant', sans-serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-search-box input:focus {
+  outline: none;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animação ao digitar */
+.input-search-box input::placeholder {
+  opacity: 0;
+  transition: opacity 5s ease;
+}
+
+.input-search-box input:focus::placeholder,
+.input-search-box input:not(:placeholder-shown)::placeholder {
+  opacity: 1;
+}
+

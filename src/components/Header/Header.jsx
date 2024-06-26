@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { FaTimes, FaRegEye } from "react-icons/fa";
 import { AppointmentsContext } from "../../providers/appointmentsProvider";
+import SearchModal from "../SearchResults/SearchResults";
 
 const Header = ({ toggleDarkMode, darkMode }) => {
   const { readAllAppointments, appointments } = useContext(AppointmentsContext);
@@ -29,15 +30,22 @@ const Header = ({ toggleDarkMode, darkMode }) => {
     const searchRegex = new RegExp(searchTerm, "i");
     return searchRegex.test(patient_name) || searchRegex.test(telephone);
   });
-
+  const [searchOpen, setSearchOpen] = useState(false);
   return (
     <>
       <header
-        className={`d-flex justify-content-between align-items-center ${darkMode ? "dark-theme" : "light-theme"
-          }`}
+        className={`d-flex justify-content-between align-items-center ${
+          darkMode ? "dark-theme" : "light-theme"
+        }`}
       >
         <h1>IMEC Diagnóstico Agenda</h1>
-        <InputGroup style={{width:'300px'}}>
+        <input type="search" onClick={() => setSearchOpen(true)} />
+        <SearchModal
+          isOpen={searchOpen}
+          onRequestClose={() => setSearchOpen(false)}
+        ></SearchModal>
+
+        <InputGroup style={{ width: "300px" }}>
           <Input
             type="text"
             placeholder="Nome ou Número"
@@ -76,7 +84,10 @@ const Header = ({ toggleDarkMode, darkMode }) => {
               const formattedTelephone = appointment.telephone.slice(3);
               const ddd = formattedTelephone.slice(0, 2);
               const rest = formattedTelephone.slice(2);
-              const formattedPhoneNumber = `(${ddd}) ${rest.slice(0, 4)}-${rest.slice(4)}`;
+              const formattedPhoneNumber = `(${ddd}) ${rest.slice(
+                0,
+                4
+              )}-${rest.slice(4)}`;
               return (
                 <Box
                   key={appointment.id}
@@ -88,7 +99,8 @@ const Header = ({ toggleDarkMode, darkMode }) => {
                   textAlign="center"
                 >
                   <Text>
-                    {new Date(appointment.horario).toLocaleDateString("pt-BR")} -{" "}
+                    {new Date(appointment.horario).toLocaleDateString("pt-BR")}{" "}
+                    -{" "}
                     {new Date(appointment.horario).toLocaleTimeString("pt-BR", {
                       hour: "2-digit",
                       minute: "2-digit",
