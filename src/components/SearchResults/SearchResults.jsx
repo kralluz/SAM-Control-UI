@@ -1,5 +1,5 @@
-import { useSpring, animated } from 'react-spring';
-import React, { useState, useContext } from "react";
+import { useSpring, animated } from "react-spring";
+import React, { useState, useContext, useEffect } from "react";
 import Modal from "react-modal";
 import { motion } from "framer-motion";
 import { AppointmentsContext } from "../../providers/appointmentsProvider";
@@ -10,6 +10,14 @@ Modal.setAppElement("#root");
 const SearchModal = ({ isOpen, onRequestClose }) => {
   const { appointments } = useContext(AppointmentsContext);
   const [searchTerm, setSearchTerm] = useState("");
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isOpen]);
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -26,8 +34,8 @@ const SearchModal = ({ isOpen, onRequestClose }) => {
   });
 
   const inputAnimation = useSpring({
-    to: { width: searchTerm ? '100%' : '70%' }, // Ajuste conforme necessário
-    config: { tension: 200, friction: 20 }
+    to: { width: searchTerm ? "100%" : "70%" },
+    config: { tension: 200, friction: 20 },
   });
 
   return (
@@ -43,27 +51,38 @@ const SearchModal = ({ isOpen, onRequestClose }) => {
         exit={{ opacity: 0, y: -50 }}
         transition={{ duration: 0.3 }}
       >
-    <div className="input-search-box">
-      <animated.input
-        type="search"
-        placeholder="Nome ou Telefone"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        style={{
-          ...inputAnimation,
-          padding: '12px 20px',
-          margin: '8px 0',
-          boxSizing: 'border-box',
-          borderRadius: '6px',
-          backgroundColor: '#c6f6d5',
-          color: '#276749',
-          fontFamily: 'Elephant, sans-serif',
-          fontSize: '16px',
-          border: 'none',
-          outline: 'none'
-        }}
-      />
-    </div>
+        <div className="input-search-box">
+          <animated.input
+            type="text"
+            placeholder="Nome ou Telefone"
+            autoFocus={true}
+            value={searchTerm}
+            onChange={handleSearch}
+            style={{
+              ...inputAnimation,
+              padding: "12px 20px",
+              margin: "8px 0",
+              borderRadius: "6px",
+              backgroundColor: "#c6f6d5",
+              color: "#276749",
+              fontFamily: "Elephant, sans-serif",
+              fontSize: "16px",
+              border: "none",
+              outline: "none",
+            }}
+          />
+        </div>
+        <div className="aaaaaaa">
+          {searchTerm && (
+            <div className="results-container">
+              {filteredAppointments.map((appointment) => (
+                <div key={appointment.id} className="result-item">
+                  {appointment.patient_name}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
       </motion.div>
     </Modal>
   );
