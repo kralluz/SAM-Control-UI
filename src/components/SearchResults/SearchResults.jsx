@@ -1,5 +1,5 @@
-import { useSpring, animated } from "react-spring";
 import React, { useState, useContext, useEffect } from "react";
+import { useSpring, animated } from "react-spring";
 import Modal from "react-modal";
 import { motion } from "framer-motion";
 import { AppointmentsContext } from "../../providers/appointmentsProvider";
@@ -34,8 +34,9 @@ const SearchModal = ({ isOpen, onRequestClose }) => {
   });
 
   const inputAnimation = useSpring({
-    to: { width: searchTerm ? "100%" : "70%" },
-    config: { tension: 200, friction: 20 },
+    width: isOpen ? (searchTerm ? "100%" : "70%") : "0%",
+    opacity: isOpen ? 1 : 0,
+    config: { tension: 200, friction: 20 }
   });
 
   return (
@@ -60,7 +61,7 @@ const SearchModal = ({ isOpen, onRequestClose }) => {
             onChange={handleSearch}
             style={{
               ...inputAnimation,
-              padding: "12px 20px",
+              padding: "12px 20px", // Manter padding fixo aqui
               margin: "8px 0",
               borderRadius: "6px",
               backgroundColor: "#c6f6d5",

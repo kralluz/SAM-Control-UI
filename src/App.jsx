@@ -10,7 +10,6 @@ import "./styles/modal.css";
 import LoadingSpinner from "./LoadingSpinner";
 import AppointmentList from "./components/AppointmentList/AppointmentList";
 import Header from "./components/Header/Header";
-import FadeIn from "./functions/fadeIn";
 import { AppointmentsContext } from "./providers/appointmentsProvider";
 
 const App = () => {
@@ -66,11 +65,8 @@ const App = () => {
 
   return (
     <div className={`App ${darkMode ? "dark-theme" : "light-theme"}`}>
-        <FadeIn>
           <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode} />
-        </FadeIn>
-        <FadeIn>
-          <div className="container mt-4">
+          <div className="container mt-4 main-content">
             <div className="row">
               <div className={`col-md-4 ${darkMode ? "dark-mode" : ""}`}>
                 <input
@@ -95,7 +91,6 @@ const App = () => {
               </div>
             </div>
           </div>
-        </FadeIn>
     </div>
   );
 };
