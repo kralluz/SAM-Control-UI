@@ -20,13 +20,13 @@ const Header = () => {
     width: "300px"
   };
   const inputStyle = {
-    width: searchOpen ? "0px" : "200px",
+    width: searchOpen ? "0px" : "250px",
     padding: searchOpen ? "0px" : "10px",
     height: "30px",
     transition: "width 0.2s ease-in-out",
-    border: searchOpen ? "none" : "3px solid #C6F6D5",
+    border: searchOpen ? "none" : "1px solid #C6F6D5",
     boxShadow: "2px 2px 10px #ccc",
-    borderRadius: "6px",
+    borderRadius: "6px",  
     textIndent: "30px",
   };
 
@@ -46,6 +46,7 @@ const Header = () => {
                 top: "50%",
                 transform: "translateY(-50%)",
               }}
+              color="#333333"
             />
             <input
               style={inputStyle}

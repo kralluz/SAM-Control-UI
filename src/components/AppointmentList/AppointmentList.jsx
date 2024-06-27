@@ -8,6 +8,7 @@ import "../../styles/dark-theme.css";
 import { format } from "date-fns";
 import AppointmentSlot from "../AppointmentSlot/AppointmentSlot";
 import "./AppointmentList.css";
+
 const tabStyles = {
   base: {
     _hover: {
@@ -122,31 +123,6 @@ const AppointmentList = ({
           </TabPanel>
         </TabPanels>
       </Tabs>
-      <TransitionGroup
-        className={`appointments-container ${darkMode ? "dark-theme" : "light-theme"}`}
-      >
-        {isFiltering ? (
-          <CSSTransition key="filtering" timeout={500} classNames="fade">
-            <div className="filtering-message">Filtrando...</div>
-          </CSSTransition>
-        ) : (
-          filteredAppointments.map((appointment) => (
-            <CSSTransition
-              key={appointment.id}
-              timeout={500}
-              classNames="appointment"
-            >
-              <AppointmentSlot
-                key={appointment.id}
-                appointment={appointment}
-                darkMode={darkMode}
-                handleAddEditAppointment={handleAddEditAppointment}
-                handleDeleteAppointment={handleDeleteAppointment}
-              />
-            </CSSTransition>
-          ))
-        )}
-      </TransitionGroup>
     </div>
   );
 };
