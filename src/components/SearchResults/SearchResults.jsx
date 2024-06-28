@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { motion } from "framer-motion";
 import { AppointmentsContext } from "../../providers/appointmentsProvider";
 import "./SearchModal.css";
+import OccupiedSlot from "../OccupiedSlot/OccupiedSlot";
 
 Modal.setAppElement("#root");
 
@@ -78,7 +79,8 @@ const SearchModal = ({ isOpen, onRequestClose }) => {
             <div className="results-container">
               {filteredAppointments.map((appointment) => (
                 <div key={appointment.id} className="result-item">
-                  {appointment.patient_name}
+                  <OccupiedSlot
+                  appointment={appointment  }/>
                 </div>
               ))}
             </div>

@@ -85,7 +85,7 @@ const AppointmentList = ({
       </h2>
       <hr/>
       <Tabs variant="soft-rounded" colorScheme='green' style={{paddingBottom: '12px'}} >
-        <TabList style={{display:'flex', flexWrap:'wrap', alignItems:'flex-end'}}>
+        <TabList style={{display:'flex', flexWrap:'wrap', alignItems:'flex-end', justifyContent: 'space-around'}}>
           {renderTab("Todos", "Todos")}
           {renderTab("Disponiveis", "Disponíveis")}
           {renderTab("us", "Ultrassom")}
